@@ -3,6 +3,9 @@ import {TodoList} from "./TodoList";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import moment from "moment";
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
+
 
 export class TodoApp extends React.Component{
     constructor(props){
@@ -63,11 +66,12 @@ export class TodoApp extends React.Component{
                             Text:
                         </label>
 
-                        <input
+                        <Input
                             id="text"
+                            value={this.state.text}
                             onChange={this.handleTextChange}
                             value={this.state.text}>
-                        </input>
+                        </Input>
 
                         <br/>
                         <br/>
@@ -75,12 +79,12 @@ export class TodoApp extends React.Component{
                             Priority:
                         </label>
 
-                        <input
+                        <Input
                             id="priority"
                             type="number"
                             onChange={this.handlePriorityChange}
                             value={this.state.priority}>
-                        </input>
+                        </Input>
                         <br/>
                         <br/>
 
@@ -90,10 +94,13 @@ export class TodoApp extends React.Component{
                             placeholderText="Due date"
                             onChange={this.handleDateChange}>
                         </DatePicker>
+
                         <br/>
-                        <button>
+                        <br/>
+                        <Button type="submit">
+                            
                             Add #{this.state.items.length + 1}
-                        </button>
+                        </Button>
                     </form>
                     <br/>
                     <br/>
